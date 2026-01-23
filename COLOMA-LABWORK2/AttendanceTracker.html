@@ -3,56 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Tracker - Coloma</title>
+    <title>Slayer Corps Attendance</title>
     <link rel="stylesheet" href="AttendanceTracker.css">
 </head>
 <body>
 
-    <div id="login-section">
-        <div class="card">
-            <h2>System Login</h2>
-            <div class="input-group">
-                <input type="text" id="username" placeholder="Username">
-                <input type="password" id="password" placeholder="Password">
-            </div>
-            <button onclick="handleLogin()">Log In</button>
+    <audio id="bg-music">
+        <source src="assets/animewow.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="main-container">
+        
+        <div id="login-section" class="card">
+            <h2>RECRUIT LOGIN</h2>
+            <input type="text" id="username" placeholder="Enter Name">
+            <input type="password" id="password" placeholder="Passcode">
+            <button onclick="handleLogin()">ENTER HEADQUARTERS</button>
         </div>
-    </div>
 
-    <div id="main-app" style="display: none;">
-        <div class="container">
-            
-            <div class="form-panel">
-                <h2>Attendance Tracker</h2>
-                
-                <label for="nameField">Full Name:</label>
-                <input type="text" id="nameField">
-                
-                <label for="courseField">Course/Year:</label>
-                <input type="text" id="courseField" placeholder="e.g. BSCS 1-A">
-                
-                <label for="timeField">Timestamp (Entry Time):</label>
-                <input type="text" id="timeField" readonly>
-                
-                <label for="sigField">E-Signature (Unique Seal):</label>
-                <input type="text" id="sigField" readonly>
-                
-                <button id="submitButton" onclick="submitAttendance()">Submit & Save Attendance</button>
-            </div>
+        <div id="main-app" class="card" style="display: none;">
+            <header>
+                <h1>ATTENDANCE TRACKER</h1>
+                <p id="user-count-display" style="color: #b02a2a; font-weight: bold;">Active Slayers: 0 / 3</p>
+            </header>
 
-            <div class="list-panel">
-                <h3>Slayer Corps Ledger</h3>
-                <div id="ledgerContainer" class="ledger-box">
+            <div class="container">
+                <div class="form-panel">
+                    <label for="nameField">Slayer Name:</label>
+                    <input type="text" id="nameField" readonly>
+
+                    <label for="courseField">Rank & Division:</label>
+                    <input type="text" id="courseField" value="1st Year BSIT" readonly>
+
+                    <label for="statusField">Manual Action:</label>
+                    <select id="statusField" class="status-select">
+                        <option value="TIME IN">TIME IN</option>
+                        <option value="TIME OUT">TIME OUT</option>
+                    </select>
+
+                    <label for="timeField">Timestamp:</label>
+                    <input type="text" id="timeField" readonly>
+
+                    <label for="sigField">E-Signature (Unique Seal):</label>
+                    <input type="text" id="sigField" readonly>
+
+                    <button id="submitButton" onclick="submitAttendance()">SUBMIT & SAVE ATTENDANCE</button>
+                </div>
+
+                <div class="list-panel">
+                    <h3>SLAYER CORPS LEDGER</h3>
                     <ul id="attendanceList"></ul>
                 </div>
             </div>
-
         </div>
     </div>
-
-  <audio id="bg-music" loop>
-    <source src="assets/animewow.mp3" type="audio/mpeg">
-  </audio>
 
     <script src="AttendanceTracker.js"></script>
 </body>
