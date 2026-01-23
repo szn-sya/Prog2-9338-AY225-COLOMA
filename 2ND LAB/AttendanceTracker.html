@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracker - Coloma</title>
+    <link rel="stylesheet" href="AttendanceTracker.css">
+</head>
+<body>
+
+    <div id="login-section">
+        <div class="card">
+            <h2>System Login</h2>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <button onclick="handleLogin()">Log In</button>
+        </div>
+    </div>
+
+    <div id="main-app" style="display: none;">
+        <div class="container">
+            
+            <div class="form-panel">
+                <h2>Attendance Tracker</h2>
+                
+                <label for="nameField">Full Name:</label>
+                <input type="text" id="nameField">
+                
+                <label for="courseField">Course/Year:</label>
+                <input type="text" id="courseField" placeholder="e.g. BSCS 1-A">
+                
+                <label for="timeField">Timestamp (Entry Time):</label>
+                <input type="text" id="timeField" readonly>
+                
+                <label for="sigField">E-Signature (Unique Seal):</label>
+                <input type="text" id="sigField" readonly>
+                
+                <button id="submitButton" onclick="submitAttendance()">Submit & Save Attendance</button>
+            </div>
+
+            <div class="list-panel">
+                <h3>Slayer Corps Ledger</h3>
+                <div id="ledgerContainer" class="ledger-box">
+                    <ul id="attendanceList"></ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+  <audio id="bg-music" loop>
+    <source src="assets/animewow.mp3" type="audio/mpeg">
+  </audio>
+
+    <script src="AttendanceTracker.js"></script>
+</body>
+</html>
