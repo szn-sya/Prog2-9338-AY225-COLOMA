@@ -1,0 +1,1 @@
+A specialized parser that deals with names with commas is used to open a csv file before using mp01 to find out the total dataset size and mp13 to look for and provide a listing of all incomplete rows, and finally uses mp19 to provide an overall integrity report summary of the entire dataset.
